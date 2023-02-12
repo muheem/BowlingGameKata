@@ -12,22 +12,15 @@ public class BowlingGame {
 
     private static final int STRIKE_SCORE = 10;
     private static final int TOTAL_ROUND = 10;
+    private static final int TOTAL_ROUND_WITH_MAX_SPARES = 12;
 
     // The input scores separated into an array of 10 rounds of a Bowling game.
-    static class ScoreCard {
-        public String score;
-        public int spares;
-    }
-
-    //static  ScoreCard[] scoreCard;
     private String[] scoreCard;
 
-    // scorecard and scorecardSpares stove the calculated score and (spares) for each round.
-    // Arrays of twelve to accommodate the (possible ) extra throws to get the spare scores at the end.
-    private int[] scoreCardSpares = {0,0,0,0,0,0,0,0,0,0,0,0};
 
     // ScoreValues : Stores data parsed from input string Scorecard.
     static class ScoreValues {
+        int numberOfSpares = 0;
         private int score1;
         private int score2;
         private int spareScore;
@@ -40,8 +33,8 @@ public class BowlingGame {
         public int Value1() { return score1; }
         public int Value2() { return score2; }
 
-        public void SetSpare() { score2 = STRIKE_SCORE - score1; };
-        public void SetStrike() { score1 = STRIKE_SCORE; };
+        public void SetSpare() { score2 = STRIKE_SCORE - score1; numberOfSpares = 1; };
+        public void SetStrike() { score1 = STRIKE_SCORE;  numberOfSpares = 2;};
         public void SetValue(int value) {
             if (score1 < 0)
                 score1 = value;
@@ -57,7 +50,7 @@ public class BowlingGame {
     // Get the extra spare score due to a strike or knocking all the pins down (leading to a spare).
     private int calculateSparesScore(int index) {
         int value = 0;
-        switch ( scoreCardSpares[index] ) {
+        switch ( scoreValues[index].numberOfSpares ) {
             case 1:
                 value = scoreValues[index + 1].Value1();
                 break;
@@ -81,14 +74,10 @@ public class BowlingGame {
             switch (c) {
                 case STRIKE:
                     scoreValues[index].SetStrike();
-                    if (index < TOTAL_ROUND)
-                        scoreCardSpares[index]  = 2;
                     break;
                 case SPARE:
                     scoreValues[index].SetSpare();
-                    if (index < TOTAL_ROUND)
-                        scoreCardSpares[index]  = 1;
-                   break;
+                    break;
                 case MISS:
                     break;
                 default: // A number less than 10 (i.e. not a strike)
@@ -100,22 +89,22 @@ public class BowlingGame {
     public int totalScore(String scorecard) {
         int totalScore = 0;
 
+        // Split input string and store in String Array ScoreCard.
         scoreCard = scorecard.split(" ", -1);
 
         // Initialise ScoreValues
-        scoreValues = new ScoreValues[12];
-        for(int i=0;i<12;i++){
+        scoreValues = new ScoreValues[TOTAL_ROUND_WITH_MAX_SPARES];
+        for(int i = 0; i < scoreValues.length; i++) {
             scoreValues[i]=new ScoreValues();
         }
 
         // Add up the scores backwards, so any spare scores "ahead" have already been calculated.
         for(int i = scoreCard.length - 1 ; i >= 0; i--) {
-
             calculateScore(scoreCard[i], i);
-            scoreValues[i].SetSpareScore( calculateSparesScore(i) );
+
             // Ignore the spares at the end (for the total score)
             if (i < TOTAL_ROUND) {
-                //System.out.println(" Score=" + i + " " + scoreValues[i].totalScore());
+                scoreValues[i].SetSpareScore( calculateSparesScore(i) );
                 totalScore += scoreValues[i].totalScore();
             }
         }

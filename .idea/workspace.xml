@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1c116c5-927c-4148-ac99-531d0dd7f877" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/.~lock.BowlingGameTest.csv#" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/BowlingGameTest.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/.~lock.BowlingGameTest.csv#" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/BowlingGameTest.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/techreturners/BowlingGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/techreturners/BowlingGameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +59,7 @@
       <recent name="com.techreturners" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BowlingGameTest.CheckBowlingGameUsingCSVFile">
+  <component name="RunManager" selected="JUnit.BowlingGameTest">
     <configuration name="BowlingGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BowlingGameKata" />
       <extension name="coverage">
@@ -131,8 +125,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BowlingGameTest.CheckBowlingGameUsingCSVFile" />
         <item itemvalue="JUnit.BowlingGameTest" />
+        <item itemvalue="JUnit.BowlingGameTest.CheckBowlingGameUsingCSVFile" />
         <item itemvalue="JUnit.BowlingGameTest.CheckBowlingGameScoreAGoodScore" />
         <item itemvalue="JUnit.BowlingGameTest.CheckBowlingGameScoreAllStrikes" />
       </list>
@@ -157,8 +151,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="8" />
+          <line>104</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
