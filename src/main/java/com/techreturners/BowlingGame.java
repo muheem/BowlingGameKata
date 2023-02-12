@@ -4,8 +4,6 @@ package com.techreturners;
 
 public class BowlingGame {
 
-
-    // Store X - / as static chars
     private static final char STRIKE = 'X';
     private static final char SPARE = '/';
     private static final char MISS = '-';
@@ -14,26 +12,32 @@ public class BowlingGame {
     private static final int TOTAL_ROUND = 10;
     private static final int TOTAL_ROUND_WITH_MAX_SPARES = 12;
 
-    // The input scores separated into an array of 10 rounds of a Bowling game.
+    private static final int NOT_SET = -1;
+    // ScoreCard : The input scores separated into an array of 10 rounds of a Bowling game.
     private String[] scoreCard;
 
 
     // ScoreValues : Stores data parsed from input string Scorecard.
     static class ScoreValues {
-        int numberOfSpares = 0;
-        private int score1;
-        private int score2;
-        private int spareScore;
-        ScoreValues(){
-            this.score1=-1;
-            this.score2=0;
-            this.spareScore=0;
-        }
 
-        public int Value1() { return score1; }
+        private int score1 = NOT_SET; // Score in the first bowl in a round. Initialised to -1, so we know when not set.
+        private int score2 = 0; // Score in the second bowl in a round (if there is one)
+        private int spareScore = 0; // The score added for a STRIKE or a SPARE.
+
+        int numberOfSpares = 0; // number of spare throws to add to spareScore.(1 for SPARE, 2 for STRIKE)
+
+        public int Value1() {
+            if (score1 == NOT_SET) // not set
+                return 0 ;
+            else
+                return score1;
+        }
         public int Value2() { return score2; }
 
-        public void SetSpare() { score2 = STRIKE_SCORE - score1; numberOfSpares = 1; };
+        public void SetSpare() {
+            score2 = STRIKE_SCORE - score1;
+            numberOfSpares = 1;
+        }
         public void SetStrike() {
             if (numberOfSpares == 1)
                 spareScore = STRIKE_SCORE;
@@ -48,6 +52,7 @@ public class BowlingGame {
                 score1 = value;
             else
                 score2 = value;
+
         }
         public void SetSpareScore(int value) {
             if (spareScore == 0)

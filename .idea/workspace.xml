@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/techreturners/BowlingGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/techreturners/BowlingGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/.~lock.BowlingGameTest.csv#" beforeDir="false" afterPath="$PROJECT_DIR$/resources/.~lock.BowlingGameTest.csv#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/BowlingGameTest.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/BowlingGameTest.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,13 +154,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java</url>
-          <line>39</line>
+          <line>49</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="15" />
+          <line>88</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -50,6 +50,4 @@ public class BowlingGameTest {
         BowlingGame bowlingGame = new BowlingGame();
         assertEquals(expected, bowlingGame.totalScore(bowlingScore));
     }
-
-
 }
