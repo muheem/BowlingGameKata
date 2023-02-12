@@ -53,7 +53,38 @@
       <recent name="com.techreturners" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BowlingGameTest">
+    <configuration name="BowlingGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BowlingGameKata" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techreturners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techreturners" />
+      <option name="MAIN_CLASS_NAME" value="com.techreturners.BowlingGameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BowlingGameTest.CheckBowlingGameScoreAGoodScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BowlingGameKata" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.techreturners.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.techreturners" />
+      <option name="MAIN_CLASS_NAME" value="com.techreturners.BowlingGameTest" />
+      <option name="METHOD_NAME" value="CheckBowlingGameScoreAGoodScore" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BowlingGameTest.CheckBowlingGameScoreAllStrikes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BowlingGameKata" />
       <extension name="coverage">
@@ -72,6 +103,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BowlingGameTest" />
+        <item itemvalue="JUnit.BowlingGameTest.CheckBowlingGameScoreAGoodScore" />
         <item itemvalue="JUnit.BowlingGameTest.CheckBowlingGameScoreAllStrikes" />
       </list>
     </recent_temporary>
@@ -86,5 +119,16 @@
       <updated>1676042509485</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/techreturners/BowlingGame.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
