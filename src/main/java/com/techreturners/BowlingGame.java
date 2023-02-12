@@ -34,14 +34,25 @@ public class BowlingGame {
         public int Value2() { return score2; }
 
         public void SetSpare() { score2 = STRIKE_SCORE - score1; numberOfSpares = 1; };
-        public void SetStrike() { score1 = STRIKE_SCORE;  numberOfSpares = 2;};
+        public void SetStrike() {
+            if (numberOfSpares == 1)
+                spareScore = STRIKE_SCORE;
+            else
+                score1 = STRIKE_SCORE;
+            numberOfSpares = 2;
+        };
         public void SetValue(int value) {
-            if (score1 < 0)
+            if (numberOfSpares == 1)
+                spareScore = value;
+            else if (score1 < 0)
                 score1 = value;
             else
                 score2 = value;
         }
-        public void SetSpareScore(int value) {spareScore = value; }
+        public void SetSpareScore(int value) {
+            if (spareScore == 0)
+                spareScore = value;
+        }
         public int totalScore() { return score1+score2+spareScore; }
     }
 

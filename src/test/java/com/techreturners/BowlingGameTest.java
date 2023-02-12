@@ -20,7 +20,7 @@ public class BowlingGameTest {
     @Test
     public void CheckBowlingGameScoreWithOneSpare() {
         BowlingGame bowlingGame = new BowlingGame();
-        assertEquals(27, bowlingGame.totalScore("11 11 11 11 11 11 11 01 01 4/ 1"));
+        assertEquals(27, bowlingGame.totalScore("11 11 11 11 11 11 11 01 01 4/1"));
     }
 
     @Test
@@ -39,7 +39,7 @@ public class BowlingGameTest {
     @Test
     public void CheckBowlingGameScoreAllSpares() {
         BowlingGame bowlingGame = new BowlingGame();
-        assertEquals(155, bowlingGame.totalScore("1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9/ 1/ X"));
+        assertEquals(155, bowlingGame.totalScore("1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9/ 1/X"));
     }
 
 
