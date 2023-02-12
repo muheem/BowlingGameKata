@@ -1,6 +1,11 @@
 package com.techreturners;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -37,10 +42,13 @@ public class BowlingGameTest {
         assertEquals(155, bowlingGame.totalScore("1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9/ 1/ X"));
     }
 
-    @Test
-    public void CheckBowlingGameScoreNinety() {
+
+
+    @ParameterizedTest
+    @CsvFileSource(resources="/BowlingGameTest.csv", numLinesToSkip = 1)
+    public void CheckBowlingGameUsingCSVFile(String bowlingScore, int expected) {
         BowlingGame bowlingGame = new BowlingGame();
-        assertEquals(150, bowlingGame.totalScore("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5"));
+        assertEquals(expected, bowlingGame.totalScore(bowlingScore));
     }
 
 

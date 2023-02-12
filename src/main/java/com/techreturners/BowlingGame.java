@@ -26,7 +26,7 @@ public class BowlingGame {
     // Arrays of twelve to accommodate the (possible ) extra throws to get the spare scores at the end.
     private int[] scoreCardSpares = {0,0,0,0,0,0,0,0,0,0,0,0};
 
-
+    // ScoreValues : Stores data parsed from input string Scorecard.
     static class ScoreValues {
         private int score1;
         private int score2;
@@ -55,7 +55,7 @@ public class BowlingGame {
     private ScoreValues[] scoreValues;
 
     // Get the extra spare score due to a strike or knocking all the pins down (leading to a spare).
-    private int GetSparesScore(int index) {
+    private int calculateSparesScore(int index) {
         int value = 0;
         switch ( scoreCardSpares[index] ) {
             case 1:
@@ -112,15 +112,13 @@ public class BowlingGame {
         for(int i = scoreCard.length - 1 ; i >= 0; i--) {
 
             calculateScore(scoreCard[i], i);
-            scoreValues[i].SetSpareScore( GetSparesScore(i) );
-            //System.out.println(" SpareScore=" + i + " " + GetSparesScore(i) );
+            scoreValues[i].SetSpareScore( calculateSparesScore(i) );
             // Ignore the spares at the end (for the total score)
             if (i < TOTAL_ROUND) {
-                System.out.println(" Score=" + i + " " + scoreValues[i].totalScore());
+                //System.out.println(" Score=" + i + " " + scoreValues[i].totalScore());
                 totalScore += scoreValues[i].totalScore();
             }
         }
-
         return totalScore;
     }
 }
